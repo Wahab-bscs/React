@@ -28,6 +28,7 @@ function App() {
   }, [length, numAllowed, charAllowed])
   const passwordRef = useRef(null)
   const copyToClipboard = useCallback(() => {
+    passwordRef.current?.select()
     window.navigator.clipboard.writeText(password)
   }, [password])
   useEffect(() => {
